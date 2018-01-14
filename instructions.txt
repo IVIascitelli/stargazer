@@ -1,0 +1,12 @@
+# Full Instructions for running stream
+
+1) Ensure consistencies between /etc/ffserver.conf and ~/stargazer/ffrun.sh
+   Stream parameters like frame rate must line up or the stream could crash. 
+
+2) Run ~/ffrun.sh
+   This first kills any processes on Port 8090.
+   Then it launches FFserver on HttpPort 8090 using ffserver.conf as a guide
+   It then spawns an FFmpeg process to decode and pass along the video from V4L drivers /dev/video0
+
+3) Run ~/ffview.sh
+   This just holds the proper command for viewing the stream using FFplay. It is mainly for consistence and conv   enience.
